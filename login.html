@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSafe Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container login-container">
+
+        <!-- Security Shield -->
+
+        <div class="security-logo">
+
+            <div class="shield">🛡️</div>
+
+            <div class="scan-ring"></div>
+
+        </div>
+
+
+        <!-- Title -->
+
+        <h1>Cyber Safe</h1>
+
+        <p class="subtitle">
+            🔐 Secure Access
+        </p>
+
+
+        <!-- Login Box -->
+
+        <div class="login-box">
+
+            <h2>Welcome Back</h2>
+
+            <p>
+                Enter your credentials to access CyberSafe.
+            </p>
+
+
+            <input
+                type="text"
+                id="username"
+                placeholder="👤 Username"
+            >
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="🔑 Password"
+            >
+
+
+            <button onclick="login()">
+                🔐 Login
+            </button>
+
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function login(){
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+
+            if(username === "CyberSafe" &&
+   password === "Security"){
+
+    sessionStorage.setItem("cyberSafeLogin", "true");
+
+    window.location.href = "index.html";
+
+}
+
+            else{
+
+                document.getElementById("loginMessage").innerHTML =
+                    "❌ Invalid Username or Password";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
