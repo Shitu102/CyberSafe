@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Quiz</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧠 Cyber Safety Quiz</h1>
+
+<div id="quizBox">
+
+<h2 id="question">Question</h2>
+
+<div class="options">
+
+<button class="option" onclick="checkAnswer(0)" id="op0"></button>
+
+<button class="option" onclick="checkAnswer(1)" id="op1"></button>
+
+<button class="option" onclick="checkAnswer(2)" id="op2"></button>
+
+<button class="option" onclick="checkAnswer(3)" id="op3"></button>
+
+</div>
+
+<div class="progressBox">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="progress"></p>
+
+</div>
+
+<div id="result" style="display:none;"></div>
+
+<br>
+
+<button id="restartBtn" onclick="restartQuiz()" style="display:none;">
+🔄 Restart Quiz
+</button>
+
+<br>
+
+<a href="index.html">
+<button>⬅ Back to Home</button>
+</a>
+
+</div>
+
+<script src="quiz.js"></script>
+
+</body>
+</html>

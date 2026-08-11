@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Email</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📧 Check Email</h1>
+
+    <p>Paste the email below for analysis.</p>
+
+    <textarea id="email" rows="10" placeholder="Paste your email here..."></textarea>
+
+    <br><br>
+
+    <button onclick="startEmailAnalysis()">Analyze Email</button>
+
+    <br><br>
+
+    <!-- Loading section -->
+    <div id="emailLoading" style="display:none; text-align:center;">
+
+        <div class="loader"></div>
+
+        <h3>📧 Analyzing your email...</h3>
+
+        <p>Please wait...</p>
+
+    </div>
+
+    <!-- Permanent Result section -->
+    <div id="emailResult">
+
+        <h2>Result</h2>
+
+        <p>Waiting for analysis...</p>
+
+    </div>
+
+    <br>
+
+    <!-- Permanent Back to Home button -->
+    <a href="index.html">
+        <button>⬅ Back to Home</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

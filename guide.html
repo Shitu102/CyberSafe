@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Safety Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container guide-container">
+
+    <h1>🛡️ Cyber Safety Guide</h1>
+
+    <p class="subtitle">
+        Select a topic to learn.
+    </p>
+
+
+    <!-- Password -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('password')">
+
+            🔐 Password Safety
+            <span>›</span>
+
+        </button>
+
+        <div id="password" class="guide-info"></div>
+
+    </div>
+
+
+    <!-- OTP -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('otpGuide')">
+
+            🔑 OTP Safety
+            <span>›</span>
+
+        </button>
+
+        <div id="otpGuide" class="guide-info"></div>
+
+    </div>
+
+
+    <!-- UPI -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('upi')">
+
+            💳 UPI Safety
+            <span>›</span>
+
+        </button>
+
+        <div id="upi" class="guide-info"></div>
+
+    </div>
+
+
+    <!-- Email -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('email')">
+
+            📧 Email Safety
+            <span>›</span>
+
+        </button>
+
+        <div id="email" class="guide-info"></div>
+
+    </div>
+
+
+    <!-- Browsing -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('browsing')">
+
+            🌐 Safe Browsing
+            <span>›</span>
+
+        </button>
+
+        <div id="browsing" class="guide-info"></div>
+
+    </div>
+
+
+    <!-- Social Media -->
+
+    <div class="guide-item">
+
+        <button class="guide-btn"
+                onclick="showGuide('social')">
+
+            📱 Social Media Safety
+            <span>›</span>
+
+        </button>
+
+        <div id="social" class="guide-info"></div>
+
+    </div>
+
+
+    <br>
+
+    <a href="index.html">
+
+        <button class="back-home">
+            ← Back to Home
+        </button>
+
+    </a>
+
+</div>
+
+
+<script>
+
+function showGuide(topic){
+
+    // आधीची सर्व information बंद करणे
+
+    document.querySelectorAll(".guide-info").forEach(function(box){
+
+        box.innerHTML = "";
+
+        box.style.display = "none";
+
+    });
+
+
+    let guide = document.getElementById(topic);
+
+    guide.style.display = "block";
+
+
+    if(topic === "password"){
+
+        guide.innerHTML = `
+            <h2>🔐 Password Safety</h2>
+
+            <ul>
+                <li>Use at least 12 characters.</li>
+                <li>Use uppercase, lowercase, numbers and symbols.</li>
+                <li>Never share your password.</li>
+                <li>Enable Two-Factor Authentication (2FA).</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if(topic === "otpGuide"){
+
+        guide.innerHTML = `
+            <h2>🔑 OTP Safety</h2>
+
+            <ul>
+                <li>Never share OTP with anyone.</li>
+                <li>Banks never ask for OTP.</li>
+                <li>Don't enter OTP on unknown websites.</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if(topic === "upi"){
+
+        guide.innerHTML = `
+            <h2>💳 UPI Safety</h2>
+
+            <ul>
+                <li>Never share your UPI PIN.</li>
+                <li>Check the receiver before payment.</li>
+                <li>Don't scan unknown QR codes.</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if(topic === "email"){
+
+        guide.innerHTML = `
+            <h2>📧 Email Safety</h2>
+
+            <ul>
+                <li>Check the sender's email address.</li>
+                <li>Don't open unknown attachments.</li>
+                <li>Beware of phishing emails.</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if(topic === "browsing"){
+
+        guide.innerHTML = `
+            <h2>🌐 Safe Browsing</h2>
+
+            <ul>
+                <li>Visit trusted websites only.</li>
+                <li>Look for HTTPS.</li>
+                <li>Avoid downloading unknown files.</li>
+            </ul>
+        `;
+
+    }
+
+
+    else if(topic === "social"){
+
+        guide.innerHTML = `
+            <h2>📱 Social Media Safety</h2>
+
+            <ul>
+                <li>Keep your profile private.</li>
+                <li>Don't accept unknown friend requests.</li>
+                <li>Don't share personal information publicly.</li>
+            </ul>
+        `;
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
