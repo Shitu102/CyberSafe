@@ -8,6 +8,8 @@
     <title>CyberSafe</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -288,6 +290,20 @@ function logoutUser() {
 </script>
 
     <script src="script.js"></script>
+
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(() => console.log("CyberSafe Service Worker registered"))
+            .catch(error => console.log("Service Worker registration failed:", error));
+    });
+}
+</script>
+
+<script>
+console.log("CYBERSAFE TEST");
+</script>
 
 </body>
 
