@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSafe Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container login-container">
+
+        <!-- Security Shield -->
+
+        <div class="security-logo">
+
+            <img src="Logo.jpeg" alt="CyberSafe Logo"
+            class="login-logo">
+
+            <div class="scan-ring"></div>
+
+        </div>
+
+
+        <!-- Title -->
+
+        <h1>Cyber Safe</h1>
+
+        <p class="subtitle">
+            🔐 Secure Access
+        </p>
+
+
+        <!-- Login Box -->
+
+        <div class="login-box">
+
+            <h2>Welcome Back</h2>
+
+            <p>
+                Enter your credentials to access CyberSafe.
+            </p>
+
+
+            <input
+                type="text"
+                id="username"
+                placeholder="👤 Username"
+            >
+
+
+            <div class="password-wrapper">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Password"
+    >
+
+    <button
+        type="button"
+        class="eye-btn"
+        onclick="togglePassword('password', this)"
+    >
+        <span class="eye-icon eye-off"></span>
+    </button>
+
+</div>
+
+            <button onclick="login()">
+                🔐 Login
+            </button>
+
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function togglePassword(inputId, button) {
+
+    const input = document.getElementById(inputId);
+    const eyeIcon = button.querySelector(".eye-icon");
+
+    if (input.type === "password") {
+
+        input.type = "text";
+        eyeIcon.classList.remove("eye-off");
+
+    } else {
+
+        input.type = "password";
+        eyeIcon.classList.add("eye-off");
+
+    }
+}
+
+        function login(){
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+
+            let accounts =
+    JSON.parse(localStorage.getItem("cyberSafeAccounts")) || [];
+
+let validAccount = accounts.find(
+    account =>
+        account.username === username &&
+        account.password === password
+);
+
+if(validAccount){
+
+    sessionStorage.setItem("cyberSafeLogin", "true");
+    sessionStorage.setItem("cyberSafeUsername", username);
+
+
+    // Check whether 2FA is enabled
+    let twoFAEnabled =
+        localStorage.getItem("twoFAEnabled") === "true";
+
+    if(twoFAEnabled){
+
+        // 2FA ON → OTP verification
+        window.location.href = "twofa.html";
+
+    }
+    else{
+
+        // 2FA OFF → Direct Home
+        window.location.href = "index.html";
+
+    }
+
+}
+
+            else{
+
+                document.getElementById("loginMessage").innerHTML =
+                    "❌ Invalid Username or Password";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
