@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Message</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+    <h1> Check Message</h1>
+
+    <p>Paste your suspicious message below.</p>
+
+    <textarea id="message" rows="10" cols="50" placeholder="Paste your message here..."></textarea>
+
+    <br><br>
+
+    <button onclick="startMessageAnalysis()">Analyze Message</button>
+
+    <br><br>
+
+    <div id="loading" style="display:none; text-align:center;">
+
+<div class="loader"></div>
+
+<h3>🔍 Analyzing your message...</h3>
+
+<p>Please wait...</p>
+
+</div>
+
+    <div id="result">
+
+<h2>Result</h2>
+
+<p>Waiting for analysis...</p>
+
+</div>
+
+    <br>
+
+    <a href="index.html">
+        <button>⬅ Back to Home</button>
+    </a>
+    </div>
+
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>
